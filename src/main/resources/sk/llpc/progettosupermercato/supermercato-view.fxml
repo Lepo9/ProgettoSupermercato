@@ -2,9 +2,7 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="816.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.llpc.progettosupermercato.SupermercatoController">
    <top>
@@ -24,30 +22,10 @@
    <center>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="816.0" BorderPane.alignment="CENTER">
          <children>
-            <Button alignment="CENTER" mnemonicParsing="false" text="Button">
+            <Button fx:id="btt" alignment="CENTER" mnemonicParsing="false" text="Button">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
-               </HBox.margin>
-               <effect>
-                  <ColorInput>
-                     <paint>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="1.0" green="1.0" blue="1.0" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </paint>
-                  </ColorInput>
-               </effect></Button>
+               </HBox.margin></Button>
             <Button alignment="CENTER" mnemonicParsing="false" text="Button">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
