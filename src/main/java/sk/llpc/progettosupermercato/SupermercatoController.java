@@ -6,12 +6,9 @@ import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.effect.Effect;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.util.Duration;
 
@@ -19,28 +16,30 @@ import java.util.ArrayList;
 
 public class SupermercatoController {
 
-    @FXML
-    Button btt;
-
-    //Prova per il background
+    private final int intervalloAggiornamento = 2; //secondi
 
     public Background rosso;
     public Background verde;
+
+    //Provvisorio, è per prova
+    @FXML
+    Button btt;
 
     //Gestione timeline ---------------
     private Timeline timeline;
     private int contatore;
 
-
     private void inizializzaTimeline(){
         timeline = new Timeline(new KeyFrame(
-                Duration.seconds(2),
+                Duration.seconds(intervalloAggiornamento),
                 e -> incrementa()
         ));
         timeline.setCycleCount(Animation.INDEFINITE);
         contatore = 0;
     }
+    // ------------------------------
 
+    //Provvisorio, è per prova
     private void incrementa(){
         contatore++;
         if (contatore % 2 == 0)
@@ -50,16 +49,13 @@ public class SupermercatoController {
 
         System.out.println(contatore);
     }
-    // ------------------------------
-
-
 
     @FXML
     void initialize(){
         inizializzaTimeline();
         rosso = new Background(new BackgroundFill(Paint.valueOf("red"), new CornerRadii(10), Insets.EMPTY));
         verde = new Background(new BackgroundFill(Paint.valueOf("lime"), new CornerRadii(10), Insets.EMPTY));
-        timeline.play();
+        timeline.play(); //Il play dovrà essere integrato con la barra dei menù
     }
 
     @FXML
