@@ -28,7 +28,18 @@ public class Supermercato {
      * Si generano da 1 a 4 carrelli accodandoli nelle casse.
      */
     public void aggiorna ( ){
-        int nCarrelli = (int)Math.random() * 10;
+        int nCarrelli = (int)(Math.random()*10);
+        nCarrelli = (nCarrelli % 4) + 1;
+
+        for(Cassa i: casse){
+            i.aggiorna();
+        }
+
+        for(int i= 0; i < nCarrelli; i++){
+            ricercaCassaMinore().aggiungiCarrello(new Carrello());
+        }
+      
+      int nCarrelli = (int)Math.random() * 10;
         nCarrelli %= 4 + 1;
         for(Cassa i: casse){
             i.aggiorna();
