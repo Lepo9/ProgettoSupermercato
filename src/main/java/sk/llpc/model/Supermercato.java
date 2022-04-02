@@ -32,7 +32,6 @@ public class Supermercato {
         nCarrelli %= 4 + 1;
         for(Cassa i: casse){
             i.aggiorna();
-
         }
     }
 
