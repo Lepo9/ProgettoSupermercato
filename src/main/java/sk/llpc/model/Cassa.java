@@ -34,7 +34,7 @@ public class Cassa {
      * Processa il carrello.
      */
     public void aggiorna (){
-        if(coda == null)
+        if(coda.size() == 0)
             return;
         if((coda.peek()).togliProdotti(velocità))
             coda.pop();
