@@ -16,6 +16,10 @@ public class Supermercato {
      */
     public Supermercato ( int nCasse ){
         casse = new ArrayList<>();
+        for(int i = 0; i < nCasse; i++){
+            Cassa temp = new Cassa();
+            casse.add(temp);
+        }
     }
 
 
