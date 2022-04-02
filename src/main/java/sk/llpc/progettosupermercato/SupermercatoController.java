@@ -3,6 +3,7 @@ package sk.llpc.progettosupermercato;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -11,15 +12,20 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Paint;
 import javafx.util.Duration;
+import sk.llpc.model.Supermercato;
 
 import java.util.ArrayList;
 
 public class SupermercatoController {
 
+    private boolean run;
+    Supermercato supermercato;
+
     private final int intervalloAggiornamento = 2; //secondi
 
-    public Background rosso;
-    public Background verde;
+    private Background rosso;
+    private Background verde;
+    private Background giallo;
 
 
     @FXML
@@ -28,7 +34,6 @@ public class SupermercatoController {
 
     //Gestione timeline ---------------
     private Timeline timeline;
-    private int contatore;
 
     private void inizializzaTimeline(){
         //Crea la timeline e lo incrementa.
@@ -37,7 +42,7 @@ public class SupermercatoController {
                 e -> incrementa()
         ));
         timeline.setCycleCount(Animation.INDEFINITE);
-        contatore = 0;
+
     }
     // ------------------------------
 
@@ -103,53 +108,81 @@ public class SupermercatoController {
     //-----------------------------------------
 
     private void onBttClick(int nBtt){
+        supermercato.apriChiudiCassa(nBtt);
+        aggiornaGrafica();
+    }
 
+    private void aggiornaGrafica(){
+        ArrayList<Boolean> aperte = supermercato.getCasseAperte();
+        ArrayList<Integer> numeroC = supermercato.getNCarrelliPerCassa();
+        for(int i = 0; i<10; i++){
+            Button b = bttCasse.get(i);
+            if (!aperte.get(i)) //chiusa
+                b.setBackground(rosso);
+            else if(!run)//aperta ma in pausa
+                b.setBackground(giallo);
+            else b.setBackground(verde);
+
+            b.setText("" + numeroC.get(i));
+        }
     }
 
     private void incrementa(){
+        supermercato.aggiorna();
+        aggiornaGrafica();
+    }
 
+    private void inizializzazioneColori(){
+        rosso = new Background(new BackgroundFill(Paint.valueOf("red"), new CornerRadii(10), Insets.EMPTY));
+        verde = new Background(new BackgroundFill(Paint.valueOf("lime"), new CornerRadii(10), Insets.EMPTY));
+        giallo = new Background(new BackgroundFill(Paint.valueOf("yellow"), new CornerRadii(10), Insets.EMPTY));
+    }
+
+    private void inizializzaSupermercato(){
+        supermercato = new Supermercato(10);
     }
 
     @FXML
     void initialize(){
+        run = false;
         inizializzaTimeline();
         inizializzaPulsanti();
-        rosso = new Background(new BackgroundFill(Paint.valueOf("red"), new CornerRadii(10), Insets.EMPTY));
-        verde = new Background(new BackgroundFill(Paint.valueOf("lime"), new CornerRadii(10), Insets.EMPTY));
-        timeline.play(); //Il play dovrà essere integrato con la barra dei menù
+        inizializzazioneColori();
+        inizializzaSupermercato();
+        aggiornaGrafica();
     }
 
 
-    /**
-     * Operation onButtonClik
-     * Attiva o disattiva la cassa.
-     *
-     */
-    protected void onButtonClik (  ){}
     /**
      * Operation start
      *
      */
     @FXML
-    protected void start (  ){}
-    /**
-     * Operation stop
-     *
-     */
-    @FXML
-    protected void stop (  ){}
+    protected void start (){
+        timeline.play();
+        run = true;
+        aggiornaGrafica();
+    }
+
     /**
      * Operation pause
      *
      */
     @FXML
-    protected void pause (  ){}
+    protected void pause (  ){
+        timeline.pause();
+        run = false;
+        aggiornaGrafica();
+    }
     /**
      * Operation reset
      *
      */
     @FXML
-    protected void reset (  ){}
+    protected void reset (  ){
+        inizializzaSupermercato();
+        aggiornaGrafica();
+    }
 
 
 }
