@@ -2,70 +2,65 @@ package sk.llpc.model;
 
 import java.util.LinkedList;
 
-public class Cassa
-
-{
-
+public class Cassa {
     private LinkedList<Carrello> coda;
     private boolean aperta;
     private final int velocità = 15;
 
     /**
-     * Operation Cassa
-     * Costruttore vuoto, crea la LinkedList, mette la cassa aperta.
-     *
-     * @return 
+     * Costruttore vuoto, crea la LinkedList, mette la cassa aperta (True).
      */
-    public Cassa (  ){}
-
-    /**
-     * Operation aggiungiCarrello
-     * Aggiunge un carrello alla cassa.
-     *
-     * @param c - 
-     */
-    public void aggiungiCarrello ( Carrello c ){}
-
-
-    /**
-     * Operation aggiorna
-     * Processa il carrello.
-     *
-     */
-    public void aggiorna (  ){}
-
-
-    /**
-     * Operation apri
-     *
-     */
-    public void apri (  ){}
-
-
-    /**
-     * Operation chiudi
-     *
-     */
-    public void chiudi (  ){}
-
-
-    /**
-     * Operation getQuanti
-     *
-     * @return int
-     */
-    public int getQuanti (  ){
-        return 0;
+    public Cassa (){
+        this.coda = new LinkedList<>();
+        this.aperta = true;
     }
 
+    /**
+     * Aggiunge un carrello alla cassa.
+     * @param c Carrello da aggiungere.
+     */
+    public void aggiungiCarrello (Carrello c){
+        if(c == null)
+            return;
+        coda.add(c);
+    }
 
     /**
-     * Operation isOpen
-     * Ritorna false se è chiusa.
-     *
-     * @return boolean
+     * Processa il carrello.
      */
-    public boolean isOpen (  ){
+    public void aggiorna (){
+        if((coda.peek()).togliProdotti(velocità))
+            coda.pop();
+    }
+
+    /**
+     * Apre la cassa.
+     */
+    public void apri (){
+        this.aperta = true;
+    }
+
+    /**
+     * Chiude la cassa.
+     */
+    public void chiudi (){
+        this.aperta = false;
+    }
+
+    /**
+     * @return numero dei carrelli in una Cassa.
+     */
+    public int getQuanti (){
+        return coda.size();
+    }
+
+    /**
+     * Interroghiamo lo stato della Cassa.
+     * @return false se la Cassa è chiusa.
+     */
+    public boolean isOpen (){
+        if(!aperta)
+            return false;
         return true;
     }
 }

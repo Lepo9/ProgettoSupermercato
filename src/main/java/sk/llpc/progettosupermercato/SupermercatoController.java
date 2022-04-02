@@ -30,6 +30,7 @@ public class SupermercatoController {
     private int contatore;
 
     private void inizializzaTimeline(){
+        //Crea la timeline e lo incrementa.
         timeline = new Timeline(new KeyFrame(
                 Duration.seconds(intervalloAggiornamento),
                 e -> incrementa()
