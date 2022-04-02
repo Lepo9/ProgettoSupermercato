@@ -3,6 +3,7 @@ package sk.llpc.progettosupermercato;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -11,16 +12,20 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Paint;
 import javafx.util.Duration;
+import sk.llpc.model.Supermercato;
 
 import java.util.ArrayList;
 
 public class SupermercatoController {
 
+    private boolean run;
+    Supermercato supermercato;
+
     private final int intervalloAggiornamento = 2; //secondi
 
-    public Background rosso;
-    public Background verde;
-    public Background giallo;
+    private Background rosso;
+    private Background verde;
+    private Background giallo;
 
 
     @FXML
@@ -103,7 +108,7 @@ public class SupermercatoController {
     //-----------------------------------------
 
     private void onBttClick(int nBtt){
-
+        supermercato.apriChiudiCassa(nBtt);
     }
 
     private void incrementa(){
@@ -116,22 +121,20 @@ public class SupermercatoController {
         giallo = new Background(new BackgroundFill(Paint.valueOf("yellow"), new CornerRadii(10), Insets.EMPTY));
     }
 
+    private void inizializzaSupermercato(){
+        supermercato = new Supermercato(10);
+    }
+
     @FXML
     void initialize(){
+        run = false;
         inizializzaTimeline();
         inizializzaPulsanti();
         inizializzazioneColori();
+        inizializzaSupermercato();
     }
 
 
-    /**
-     * Operation onButtonClik
-     * Attiva o disattiva la cassa.
-     *
-     */
-    protected void onButtonClik (  ){
-
-    }
     /**
      * Operation start
      *
@@ -139,6 +142,7 @@ public class SupermercatoController {
     @FXML
     protected void start (){
         timeline.play();
+        run = true;
     }
     /**
      * Operation stop
