@@ -119,8 +119,7 @@ public class SupermercatoController {
         timeline.play(); //Il play dovrà essere integrato con la barra dei menù
     }
 
-    @FXML
-    private ArrayList<Button> casse;
+
     /**
      * Operation onButtonClik
      * Attiva o disattiva la cassa.
