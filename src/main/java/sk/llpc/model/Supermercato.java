@@ -49,7 +49,7 @@ public class Supermercato {
         int temp = 2000000000;
         Cassa c = new Cassa();
         for (Cassa item:casse) {
-            if(temp > item.getQuanti()){
+            if(temp > item.getQuanti() && item.isOpen()){
                 temp = item.getQuanti();
                 c = item;
             }
