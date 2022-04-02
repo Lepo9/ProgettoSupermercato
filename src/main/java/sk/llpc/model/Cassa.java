@@ -2,13 +2,18 @@ package sk.llpc.model;
 
 import java.util.LinkedList;
 
+/**
+ * Classe Cassa:
+ * contiene una coda di carrelli.
+ */
+
 public class Cassa {
     private LinkedList<Carrello> coda;
     private boolean aperta;
     private final int velocità = 15;
 
     /**
-     * Costruttore vuoto, crea la LinkedList, mette la cassa aperta (True).
+     * Costruttore vuoto: crea la LinkedList, mette la cassa aperta (True).
      */
     public Cassa (){
         this.coda = new LinkedList<>();
