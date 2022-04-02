@@ -46,8 +46,8 @@ public class Supermercato {
     }
 
     /**
-     * Si occupa di produrre una lista di casse
-     * aperte e chiuse
+     * Si occupa di produrre un array di booleani che definisce
+     * se le casse sono aperte 0 chiuse
      * @return arraylist di boolean true o false
      */
     public ArrayList<Boolean> getCasseAperte(){
@@ -62,7 +62,17 @@ public class Supermercato {
         return aperte;
     }
 
-
+    /**
+     * Il metodo fornisce un array di interi
+     * @return L'array definisce quanti carrelli ci sono in coda per ciascuna cassa
+     */
+    public ArrayList<Integer>getNCarrelliPerCassa(){
+        ArrayList<Integer>t = new ArrayList<>();
+        for(Cassa i:casse){
+            t.add(i.getQuanti());
+        }
+        return t;
+    }
 
 }
 
