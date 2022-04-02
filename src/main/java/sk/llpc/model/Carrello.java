@@ -21,7 +21,11 @@ public class Carrello {
     public boolean removeProduct(int q){
         this.nProducts -= q;
 
-        if(this.nProducts <= 0){
+        if(this.nProducts < 0){
+            this.nProducts = 0;
+        }
+
+        if (this.nProducts == 0){
             return false;
         }
         else
