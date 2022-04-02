@@ -22,43 +22,43 @@
    <center>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="816.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btt" alignment="CENTER" mnemonicParsing="false" text="Button">
+            <Button fx:id="bttCassa0" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick0" text="Button">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
                </HBox.margin></Button>
-            <Button alignment="CENTER" mnemonicParsing="false" text="Button">
+            <Button fx:id="bttCassa1" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick1" text="Button">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
                </HBox.margin></Button>
-            <Button alignment="CENTER" mnemonicParsing="false" text="Button">
+            <Button fx:id="bttCassa2" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick2" text="Button">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
                </HBox.margin></Button>
-            <Button alignment="CENTER" mnemonicParsing="false" text="Button">
+            <Button fx:id="bttCassa3" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick3" text="Button">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
                </HBox.margin></Button>
-            <Button alignment="CENTER" mnemonicParsing="false" text="Button">
+            <Button fx:id="bttCassa4" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick4" text="Button">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
                </HBox.margin></Button>
-            <Button alignment="CENTER" mnemonicParsing="false" text="Button">
+            <Button fx:id="bttCassa5" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick5" text="Button">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
                </HBox.margin></Button>
-            <Button alignment="CENTER" mnemonicParsing="false" text="Button">
+            <Button fx:id="bttCassa6" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick6" text="Button">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
                </HBox.margin></Button>
-            <Button alignment="CENTER" mnemonicParsing="false" text="Button">
+            <Button fx:id="bttCassa7" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick7" text="Button">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
                </HBox.margin></Button>
-            <Button alignment="CENTER" mnemonicParsing="false" text="Button">
+            <Button fx:id="bttCassa8" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick8" text="Button">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
                </HBox.margin></Button>
-            <Button alignment="CENTER" mnemonicParsing="false" text="Button">
+            <Button fx:id="bttCassa9" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick9" text="Button">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
                </HBox.margin></Button>
