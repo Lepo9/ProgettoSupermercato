@@ -2,16 +2,24 @@ package sk.llpc.model;
 
 import java.util.Random;
 
+/**
+ * Classe Carrello:
+ * contiene il numero di prodotti e dei metodi per passare i prodotti in cassa e toglierli dal carrello.
+ */
+
 public class Carrello {
     private int nProdotti;
 
+    /**
+     * Costruttore vuoto: crea un numero randomico di prodotti all'interno di un Carrello.
+     */
     public Carrello(){
-        this.nProdotti = (int)(Math.random()*40)+ 10;
+        this.nProdotti = (int)(Math.random()*40) + 10;
     }
 
     /**
-     * Ritorna false se il carrello è vuoto.
-     * @param nProdotti - parametro che indica quanti elementi devono essere estratti dal carrello.
+     * Toglie prodotti dal Carrello.
+     * @param nProdotti parametro che indica quanti elementi devono essere estratti dal carrello.
      * @return boolean false se il carrello è vuoto.
      */
     public boolean togliProdotti(int nProdotti){
