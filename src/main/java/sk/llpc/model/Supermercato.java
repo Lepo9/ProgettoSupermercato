@@ -40,7 +40,6 @@ public class Supermercato {
         for(int i= 0; i < nCarrelli; i++){
             ricercaCassaMinore().aggiungiCarrello(new Carrello());
         }
-
     }
 
 
