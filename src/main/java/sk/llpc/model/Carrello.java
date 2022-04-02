@@ -1,30 +1,32 @@
 package sk.llpc.model;
 
-public class Carrello {
+import java.util.Random;
 
+public class Carrello {
     private int nProdotti;
 
-
-    /**
-     * Operation Carrello
-     * Valore da 10 a 50.
-     *
-     * @return 
-     */
-    public Carrello (  ){}
-
-
-    /**
-     * Operation togliProdotti
-     * Ritorna false se il carrello è vuoto.
-     *
-     * @param nProdotti - Prodotti da togliere
-     * @return boolean
-     */
-    public boolean togliProdotti ( int nProdotti ){
-        return true;
+    public Carrello(){
+        this.nProdotti = (int)(Math.random()*40)+ 10;
     }
 
+    /**
+     * Operation removeProduct
+     * Ritorna false se il carrello è vuoto.
+     *
+     * @paramn nProducts - Prodotti contenuti nel carrello
+     * @param nProdotti - parametro che indica quanti elementi devo essere estratti dal carrello
+     * @return boolean false se il carrello è vuoto
+     */
 
+    public boolean togliProdotti(int nProdotti){
+        this.nProdotti -= nProdotti;
+
+        if (this.nProdotti <= 0){
+            return false;
+        }
+        else
+            return true;
+    }
 }
+
 
