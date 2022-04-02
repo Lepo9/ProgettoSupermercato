@@ -121,7 +121,6 @@ public class SupermercatoController {
         inizializzaTimeline();
         inizializzaPulsanti();
         inizializzazioneColori();
-        timeline.play(); //Il play dovrà essere integrato con la barra dei menù
     }
 
 
@@ -130,13 +129,17 @@ public class SupermercatoController {
      * Attiva o disattiva la cassa.
      *
      */
-    protected void onButtonClik (  ){}
+    protected void onButtonClik (  ){
+
+    }
     /**
      * Operation start
      *
      */
     @FXML
-    protected void start (){}
+    protected void start (){
+        timeline.play();
+    }
     /**
      * Operation stop
      *
