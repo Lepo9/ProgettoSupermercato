@@ -13,7 +13,6 @@ import javafx.scene.paint.Paint;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class SupermercatoController {
 
@@ -25,7 +24,7 @@ public class SupermercatoController {
 
     @FXML
     Button bttCassa0,bttCassa1,bttCassa2,bttCassa3,bttCassa4,bttCassa5,bttCassa6,bttCassa7,bttCassa8,bttCassa9;
-    ArrayList <Button> casse;
+    ArrayList <Button> bttCasse;
 
     //Gestione timeline ---------------
     private Timeline timeline;
@@ -45,17 +44,17 @@ public class SupermercatoController {
 
     //Inizializzazione pulsanti ---------------
     public void inizializzaPulsanti(){
-        casse = new ArrayList<>();
-        casse.add(bttCassa0);
-        casse.add(bttCassa1);
-        casse.add(bttCassa2);
-        casse.add(bttCassa3);
-        casse.add(bttCassa4);
-        casse.add(bttCassa5);
-        casse.add(bttCassa6);
-        casse.add(bttCassa7);
-        casse.add(bttCassa8);
-        casse.add(bttCassa9);
+        bttCasse = new ArrayList<>();
+        bttCasse.add(bttCassa0);
+        bttCasse.add(bttCassa1);
+        bttCasse.add(bttCassa2);
+        bttCasse.add(bttCassa3);
+        bttCasse.add(bttCassa4);
+        bttCasse.add(bttCassa5);
+        bttCasse.add(bttCassa6);
+        bttCasse.add(bttCassa7);
+        bttCasse.add(bttCassa8);
+        bttCasse.add(bttCassa9);
     }
     //-----------------------------------------
 
@@ -120,8 +119,7 @@ public class SupermercatoController {
         timeline.play(); //Il play dovrà essere integrato con la barra dei menù
     }
 
-    @FXML
-    private ArrayList<Button> bttCasse;
+
     /**
      * Operation onButtonClik
      * Attiva o disattiva la cassa.
