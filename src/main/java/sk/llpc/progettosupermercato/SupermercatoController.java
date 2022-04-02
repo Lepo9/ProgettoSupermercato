@@ -20,6 +20,7 @@ public class SupermercatoController {
 
     public Background rosso;
     public Background verde;
+    public Background giallo;
 
 
     @FXML
@@ -28,7 +29,6 @@ public class SupermercatoController {
 
     //Gestione timeline ---------------
     private Timeline timeline;
-    private int contatore;
 
     private void inizializzaTimeline(){
         //Crea la timeline e lo incrementa.
@@ -37,7 +37,7 @@ public class SupermercatoController {
                 e -> incrementa()
         ));
         timeline.setCycleCount(Animation.INDEFINITE);
-        contatore = 0;
+
     }
     // ------------------------------
 
@@ -110,12 +110,17 @@ public class SupermercatoController {
 
     }
 
+    private void inizializzazioneColori(){
+        rosso = new Background(new BackgroundFill(Paint.valueOf("red"), new CornerRadii(10), Insets.EMPTY));
+        verde = new Background(new BackgroundFill(Paint.valueOf("lime"), new CornerRadii(10), Insets.EMPTY));
+        giallo = new Background(new BackgroundFill(Paint.valueOf("yellow"), new CornerRadii(10), Insets.EMPTY));
+    }
+
     @FXML
     void initialize(){
         inizializzaTimeline();
         inizializzaPulsanti();
-        rosso = new Background(new BackgroundFill(Paint.valueOf("red"), new CornerRadii(10), Insets.EMPTY));
-        verde = new Background(new BackgroundFill(Paint.valueOf("lime"), new CornerRadii(10), Insets.EMPTY));
+        inizializzazioneColori();
         timeline.play(); //Il play dovrà essere integrato con la barra dei menù
     }
 
@@ -131,7 +136,7 @@ public class SupermercatoController {
      *
      */
     @FXML
-    protected void start (  ){}
+    protected void start (){}
     /**
      * Operation stop
      *
