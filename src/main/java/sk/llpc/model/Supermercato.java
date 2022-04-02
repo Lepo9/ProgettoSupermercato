@@ -13,7 +13,9 @@ public class Supermercato {
      * @param nCasse - 
      * @return 
      */
-    public Supermercato ( int nCasse ){}
+    public Supermercato ( int nCasse ){
+        casse = new ArrayList<>();
+    }
 
 
     /**
