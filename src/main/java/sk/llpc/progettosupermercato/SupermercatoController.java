@@ -103,7 +103,7 @@ public class SupermercatoController {
     //-----------------------------------------
 
     private void onBttClick(int nBtt){
-        if(bttCasse)
+        if(bttCas)
     }
 
     private void incrementa(){
