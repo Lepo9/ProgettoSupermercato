@@ -30,6 +30,12 @@ public class Supermercato {
      *
      */
     public void aggiorna ( ){
+        int nCarrelli = (int)Math.random() * 10;
+        nCarrelli %= 4 + 1;
+        for(Cassa i: casse){
+            i.aggiorna();
+
+        }
     }
 
 
