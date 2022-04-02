@@ -109,10 +109,27 @@ public class SupermercatoController {
 
     private void onBttClick(int nBtt){
         supermercato.apriChiudiCassa(nBtt);
+        aggiornaGrafica();
+    }
+
+    private void aggiornaGrafica(){
+        ArrayList<Boolean> aperte = supermercato.getCasseAperte();
+        ArrayList<Integer> numeroC = supermercato.getNCarrelliPerCassa();
+        for(int i = 0; i<10; i++){
+            Button b = bttCasse.get(i);
+            if (!aperte.get(i)) //chiusa
+                b.setBackground(rosso);
+            else if(!run)//aperta ma in pausa
+                b.setBackground(giallo);
+            else b.setBackground(verde);
+
+            b.setText("" + numeroC.get(i));
+        }
     }
 
     private void incrementa(){
-
+        supermercato.aggiorna();
+        aggiornaGrafica();
     }
 
     private void inizializzazioneColori(){
@@ -132,6 +149,7 @@ public class SupermercatoController {
         inizializzaPulsanti();
         inizializzazioneColori();
         inizializzaSupermercato();
+        aggiornaGrafica();
     }
 
 
@@ -143,6 +161,7 @@ public class SupermercatoController {
     protected void start (){
         timeline.play();
         run = true;
+        aggiornaGrafica();
     }
     /**
      * Operation stop
