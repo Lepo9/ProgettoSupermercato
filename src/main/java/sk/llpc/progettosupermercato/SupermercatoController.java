@@ -103,7 +103,7 @@ public class SupermercatoController {
     //-----------------------------------------
 
     private void onBttClick(int nBtt){
-        if(bttCas)
+
     }
 
     private void incrementa(){
@@ -120,7 +120,7 @@ public class SupermercatoController {
     }
 
     @FXML
-    private ArrayList<Button> bttCasse;
+    private ArrayList<Button> casse;
     /**
      * Operation onButtonClik
      * Attiva o disattiva la cassa.
