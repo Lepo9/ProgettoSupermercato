@@ -3,10 +3,10 @@ package sk.llpc.model;
 import java.util.Random;
 
 public class Carrello {
-    private int nProducts;
+    private int nProdotti;
 
     public Carrello(){
-        this.nProducts = (int)(Math.random()*100)+ 1;
+        this.nProdotti = (int)(Math.random()*40)+ 10;
     }
 
     /**
@@ -14,18 +14,14 @@ public class Carrello {
      * Ritorna false se il carrello è vuoto.
      *
      * @paramn nProducts - Prodotti contenuti nel carrello
-     * @param q - parametro che indica quanti elementi devo essere estratti dal carrello
+     * @param nProdotti - parametro che indica quanti elementi devo essere estratti dal carrello
      * @return boolean false se il carrello è vuoto
      */
 
-    public boolean removeProduct(int q){
-        this.nProducts -= q;
+    public boolean togliProdotti(int nProdotti){
+        this.nProdotti -= nProdotti;
 
-        if(this.nProducts < 0){
-            this.nProducts = 0;
-        }
-
-        if (this.nProducts == 0){
+        if (this.nProdotti <= 0){
             return false;
         }
         else
