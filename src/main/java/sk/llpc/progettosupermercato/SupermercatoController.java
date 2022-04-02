@@ -163,24 +163,26 @@ public class SupermercatoController {
         run = true;
         aggiornaGrafica();
     }
-    /**
-     * Operation stop
-     *
-     */
-    @FXML
-    protected void stop (  ){}
+
     /**
      * Operation pause
      *
      */
     @FXML
-    protected void pause (  ){}
+    protected void pause (  ){
+        timeline.pause();
+        run = false;
+        aggiornaGrafica();
+    }
     /**
      * Operation reset
      *
      */
     @FXML
-    protected void reset (  ){}
+    protected void reset (  ){
+        inizializzaSupermercato();
+        aggiornaGrafica();
+    }
 
 
 }
