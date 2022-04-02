@@ -33,5 +33,13 @@ public class Supermercato {
     private Cassa ricercaCassaMinore (  ){
         return null;
     }
+
+
+    private void apriChiudiCassa(int nCassa){
+        if (casse.get(nCassa).isOpen())
+            casse.get(nCassa).chiudi();
+        else casse.get(nCassa).apri();
+    }
+
 }
 
