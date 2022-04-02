@@ -103,7 +103,7 @@ public class SupermercatoController {
     //-----------------------------------------
 
     private void onBttClick(int nBtt){
-        if(bttCas)
+
     }
 
     private void incrementa(){
@@ -119,8 +119,7 @@ public class SupermercatoController {
         timeline.play(); //Il play dovrà essere integrato con la barra dei menù
     }
 
-    @FXML
-    private ArrayList<Button> bttCasse;
+
     /**
      * Operation onButtonClik
      * Attiva o disattiva la cassa.
