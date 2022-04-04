@@ -21,7 +21,7 @@ public class SupermercatoController {
     private boolean run;
     Supermercato supermercato;
 
-    private final int intervalloAggiornamento = 2; //secondi
+    private final int intervalloAggiornamento = 1; //secondi
 
     private Background rosso;
     private Background verde;
