@@ -3,7 +3,6 @@ package sk.llpc.progettosupermercato;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -124,7 +123,9 @@ public class SupermercatoController {
             else b.setBackground(verde);
 
             b.setText("" + numeroC.get(i));
+            //System.out.print("" + numeroC.get(i) + ", ");
         }
+        //System.out.println("");
     }
 
     private void incrementa(){
