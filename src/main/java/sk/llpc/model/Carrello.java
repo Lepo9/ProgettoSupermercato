@@ -23,7 +23,7 @@ public class Carrello {
      * @return boolean false se il carrello è vuoto.
      */
     public boolean togliProdotti(int nProdotti){
-        this.nProdotti--;
+        this.nProdotti -= nProdotti;
         if (this.nProdotti <= 0){
             return false;
         }
