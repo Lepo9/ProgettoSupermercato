@@ -66,9 +66,7 @@ public class Cassa {
      * @return false se la Cassa è chiusa.
      */
     public boolean isOpen (){
-        if(!aperta)
-            return false;
-        return true;
+        return aperta;
     }
 }
 

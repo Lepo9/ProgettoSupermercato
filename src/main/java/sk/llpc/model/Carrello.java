@@ -14,7 +14,7 @@ public class Carrello {
      * Costruttore vuoto: crea un numero randomico di prodotti all'interno di un Carrello.
      */
     public Carrello(){
-        this.nProdotti = (int)(Math.random()*15); //da 0 a N-1
+        this.nProdotti = (int)(Math.random()*3+1); //da 0 a N-1
     }
 
     /**
