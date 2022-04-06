@@ -10,7 +10,7 @@ import java.util.LinkedList;
 public class Cassa {
     private LinkedList<Carrello> coda;
     private boolean aperta;
-    private final int velocità = 15;
+    private final int velocità = 1;
 
     /**
      * Costruttore vuoto: crea la LinkedList, mette la cassa aperta (True).
@@ -66,9 +66,7 @@ public class Cassa {
      * @return false se la Cassa è chiusa.
      */
     public boolean isOpen (){
-        if(!aperta)
-            return false;
-        return true;
+        return aperta;
     }
 }
 

@@ -9,12 +9,16 @@ import java.util.Random;
 
 public class Carrello {
     private int nProdotti;
-
+    final static int PRODOTTI_MAX = 6; //da 1 a N.
+    //Con 10 casse attive
+    //5 bilanciato e smaltisce
+    //6 Non smaltisce e si accumula
+    //4 smaltisce
     /**
      * Costruttore vuoto: crea un numero randomico di prodotti all'interno di un Carrello.
      */
     public Carrello(){
-        this.nProdotti = (int)(Math.random()*40) + 10;
+        this.nProdotti = (int)(Math.random()*PRODOTTI_MAX+1); //da 0 a N-1
     }
 
     /**
@@ -23,12 +27,12 @@ public class Carrello {
      * @return boolean false se il carrello è vuoto.
      */
     public boolean togliProdotti(int nProdotti){
-        this.nProdotti--;
+        this.nProdotti -= nProdotti;
         if (this.nProdotti <= 0){
-            return false;
+            return true;
         }
         else
-            return true;
+            return false;
     }
 }
 
