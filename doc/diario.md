@@ -136,7 +136,7 @@ mentre Cadenelli e Loda sulla parte del modello.
 ##Revisone generale del codice
 Tutti i componenti hanno provato il codice e corretto eventuali
 piccoli bugs. Sono stati eseguiti dei test per capire e regolare
-il flusso di carrelli.
+il flusso di carrelli. Il commento è stato completato.
 
 ##Idee ulteriori
 Sono emerse delle idee da implementare (non devono esserlo, se si 
