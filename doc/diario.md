@@ -79,10 +79,10 @@ e la si cominciava decidendo man mano che metodi scrivere (ovviamente
 segnalandolo al gruppo per non scrivere cose uguali).
 
 ####Leporati
-- Supervisione generare
-- Metodo getNCarrelliPerCassa() [Supermrcato]
-- Metodo getCasseAperte() [Supermrcato]
-- Metodo apriChiudiCassa() [Supermrcato]
+- Supervisione generale
+- Metodo getNCarrelliPerCassa() [Supermercato]
+- Metodo getCasseAperte() [Supermercato]
+- Metodo apriChiudiCassa() [Supermercato]
 - Creazione del file fxml
 - Metodo inizializzazioneTimeline() [SupermercatoController]
 - Metodo inizializzazionePulsanti() [SupermercatoController]
@@ -98,9 +98,9 @@ segnalandolo al gruppo per non scrivere cose uguali).
 
 ####Pasini
 - Classe carrello
-- Metodo getNCarrelliPerCassa() [Supermrcato]
-- Metodo getCasseAperte() [Supermrcato]
-- Metodo apriChiudiCassa() [Supermrcato]
+- Metodo getNCarrelliPerCassa() [Supermercato]
+- Metodo getCasseAperte() [Supermercato]
+- Metodo apriChiudiCassa() [Supermercato]
 - Metodo aggiorna() [Supermercato]
 - Creazione del file fxml
 - Metodo onBttClick(int nBtt) [SupermercatoController]
@@ -141,7 +141,7 @@ il flusso di carrelli. Il commento è stato completato.
 ##Idee ulteriori
 Sono emerse delle idee da implementare (non devono esserlo, se si 
 avrà più tempo si cercherà di implementarle)
-- Nel menù oscurare run qunado è in pausa e vicevesa
+- Nel menù oscurare run quando è in pausa e viceversa
 - Inserire il tasto per chiudere e aprire tutte le casse insieme
 - Se nessuna cassa è aperta, salvare quanti carrelli stanno aspettando
 - Se la differenza tra due casse è maggiore di 5 si spostano i carrelli.`
