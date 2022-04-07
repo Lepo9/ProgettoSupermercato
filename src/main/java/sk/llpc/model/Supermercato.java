@@ -14,11 +14,12 @@ public class Supermercato {
 
     /**
      * Crea l'ArreyList e costruzione delle casse.
+     *
      * @param nCasse Numero di casse presenti nel Supermercato.
      */
-    public Supermercato (int nCasse){
+    public Supermercato(int nCasse) {
         casse = new ArrayList<>();
-        for(int i = 0; i < nCasse; i++){
+        for (int i = 0; i < nCasse; i++) {
             Cassa temp = new Cassa();
             casse.add(temp);
         }
@@ -28,21 +29,23 @@ public class Supermercato {
      * Aggiorna tutte le casse.
      * Si generano da 1 a 4 carrelli accodandoli nelle casse.
      */
-    public void aggiorna (){
-        int nCarrelli = (int)(Math.random()*NUM_CARRELLI+2);
-        for(Cassa i: casse)
+    public void aggiorna() {
+        int nCarrelli = (int) (Math.random() * NUM_CARRELLI + 2);
+        for (Cassa i : casse)
             i.aggiorna();
-        for(int i= 0; i < nCarrelli; i++)
+        for (int i = 0; i < nCarrelli; i++)
             ricercaCassaMinore().aggiungiCarrello(new Carrello());
-        }
-      
-      nCarrelli = (int)Math.random() * 10;
-        nCarrelli %= 4 + 1;
-        for(Cassa i: casse){
+        nCarrelli = (int) Math.random() * 10;
+        nCarrelli %=4+1;
+        for(Cassa i:casse)
+        {
             i.aggiorna();
         }
-
     }
+
+
+
+
 
     /**
      * Ricerca della Cassa minore.
