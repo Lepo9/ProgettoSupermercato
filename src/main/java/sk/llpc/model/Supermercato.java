@@ -34,6 +34,14 @@ public class Supermercato {
             i.aggiorna();
         for(int i= 0; i < nCarrelli; i++)
             ricercaCassaMinore().aggiungiCarrello(new Carrello());
+        }
+      
+      nCarrelli = (int)Math.random() * 10;
+        nCarrelli %= 4 + 1;
+        for(Cassa i: casse){
+            i.aggiorna();
+        }
+
     }
 
     /**
