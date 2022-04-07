@@ -8,12 +8,13 @@ import java.util.Random;
  */
 
 public class Carrello {
-    private int nProdotti;
-    final static int PRODOTTI_MAX = 6; //da 1 a N.
     //Con 10 casse attive
     //5 bilanciato e smaltisce
     //6 Non smaltisce e si accumula
     //4 smaltisce
+    private int nProdotti;
+    final static int PRODOTTI_MAX = 6; //da 1 a N.
+
     /**
      * Costruttore vuoto: crea un numero randomico di prodotti all'interno di un Carrello.
      */

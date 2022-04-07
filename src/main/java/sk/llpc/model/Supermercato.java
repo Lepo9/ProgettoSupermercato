@@ -28,24 +28,19 @@ public class Supermercato {
      * Aggiorna tutte le casse.
      * Si generano da 1 a 4 carrelli accodandoli nelle casse.
      */
-    public void aggiorna ( ){
+    public void aggiorna (){
         int nCarrelli = (int)(Math.random()*NUM_CARRELLI+2);
-
-        for(Cassa i: casse){
+        for(Cassa i: casse)
             i.aggiorna();
-        }
-
-        for(int i= 0; i < nCarrelli; i++){
+        for(int i= 0; i < nCarrelli; i++)
             ricercaCassaMinore().aggiungiCarrello(new Carrello());
-        }
-
     }
 
     /**
      * Ricerca della Cassa minore.
      * @return Cassa minore.
      */
-    private Cassa ricercaCassaMinore (  ){
+    private Cassa ricercaCassaMinore ( ){
         int temp = 2000000000;
         Cassa c = new Cassa();
         for (Cassa item:casse) {
