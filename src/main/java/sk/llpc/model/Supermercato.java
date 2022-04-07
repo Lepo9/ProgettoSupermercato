@@ -10,6 +10,7 @@ import java.util.Iterator;
 
 public class Supermercato {
     private ArrayList<Cassa> casse;
+    private final int NUM_CARRELLI = 3; //Va da 0 a N-1
 
     /**
      * Crea l'ArreyList e costruzione delle casse.
@@ -27,15 +28,11 @@ public class Supermercato {
      * Aggiorna tutte le casse.
      * Si generano da 1 a 4 carrelli accodandoli nelle casse.
      */
-    public void aggiorna ( ){
-        int nCarrelli = (int)(Math.random()*10);
-        nCarrelli = (nCarrelli % 4) + 1;
-
-        for(Cassa i: casse){
+    public void aggiorna (){
+        int nCarrelli = (int)(Math.random()*NUM_CARRELLI+2);
+        for(Cassa i: casse)
             i.aggiorna();
-        }
-
-        for(int i= 0; i < nCarrelli; i++){
+        for(int i= 0; i < nCarrelli; i++)
             ricercaCassaMinore().aggiungiCarrello(new Carrello());
         }
       
@@ -44,17 +41,18 @@ public class Supermercato {
         for(Cassa i: casse){
             i.aggiorna();
         }
+
     }
 
     /**
      * Ricerca della Cassa minore.
      * @return Cassa minore.
      */
-    private Cassa ricercaCassaMinore (  ){
+    private Cassa ricercaCassaMinore ( ){
         int temp = 2000000000;
         Cassa c = new Cassa();
         for (Cassa item:casse) {
-            if(temp > item.getQuanti()){
+            if(temp > item.getQuanti() && item.isOpen()){
                 temp = item.getQuanti();
                 c = item;
             }

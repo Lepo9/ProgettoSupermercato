@@ -2,13 +2,18 @@ package sk.llpc.model;
 
 import java.util.LinkedList;
 
+/**
+ * Classe Cassa:
+ * contiene una coda di carrelli.
+ */
+
 public class Cassa {
     private LinkedList<Carrello> coda;
     private boolean aperta;
-    private final int velocità = 15;
+    private final int velocità = 1;
 
     /**
-     * Costruttore vuoto, crea la LinkedList, mette la cassa aperta (True).
+     * Costruttore vuoto: crea la LinkedList, mette la cassa aperta (True).
      */
     public Cassa (){
         this.coda = new LinkedList<>();
@@ -29,7 +34,7 @@ public class Cassa {
      * Processa il carrello.
      */
     public void aggiorna (){
-        if(coda == null)
+        if(coda.size() == 0)
             return;
         if((coda.peek()).togliProdotti(velocità))
             coda.pop();
@@ -61,9 +66,7 @@ public class Cassa {
      * @return false se la Cassa è chiusa.
      */
     public boolean isOpen (){
-        if(!aperta)
-            return false;
-        return true;
+        return aperta;
     }
 }
 

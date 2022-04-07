@@ -11,15 +11,20 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Paint;
 import javafx.util.Duration;
+import sk.llpc.model.Supermercato;
 
 import java.util.ArrayList;
 
 public class SupermercatoController {
 
-    private final int intervalloAggiornamento = 2; //secondi
+    private boolean run;
+    Supermercato supermercato;
 
-    public Background rosso;
-    public Background verde;
+    private final int intervalloAggiornamento = 1; //secondi
+
+    private Background rosso;
+    private Background verde;
+    private Background giallo;
 
 
     @FXML
@@ -28,7 +33,6 @@ public class SupermercatoController {
 
     //Gestione timeline ---------------
     private Timeline timeline;
-    private int contatore;
 
     private void inizializzaTimeline(){
         //Crea la timeline e lo incrementa.
@@ -37,7 +41,7 @@ public class SupermercatoController {
                 e -> incrementa()
         ));
         timeline.setCycleCount(Animation.INDEFINITE);
-        contatore = 0;
+
     }
     // ------------------------------
 
@@ -103,54 +107,79 @@ public class SupermercatoController {
     //-----------------------------------------
 
     private void onBttClick(int nBtt){
+        supermercato.apriChiudiCassa(nBtt);
+        aggiornaGrafica();
+    }
 
+    private void aggiornaGrafica(){
+        ArrayList<Boolean> aperte = supermercato.getCasseAperte();
+        ArrayList<Integer> numeroC = supermercato.getNCarrelliPerCassa();
+        for(int i = 0; i<10; i++){
+            Button b = bttCasse.get(i);
+            if (!aperte.get(i)) //chiusa
+                b.setBackground(rosso);
+            else if(!run)//aperta ma in pausa
+                b.setBackground(giallo);
+            else b.setBackground(verde);
+
+            b.setText("" + numeroC.get(i));
+            //System.out.print("" + numeroC.get(i) + ", ");
+        }
+        //System.out.println("");
     }
 
     private void incrementa(){
+        supermercato.aggiorna();
+        aggiornaGrafica();
+    }
 
+    private void inizializzazioneColori(){
+        rosso = new Background(new BackgroundFill(Paint.valueOf("red"), new CornerRadii(10), Insets.EMPTY));
+        verde = new Background(new BackgroundFill(Paint.valueOf("lime"), new CornerRadii(10), Insets.EMPTY));
+        giallo = new Background(new BackgroundFill(Paint.valueOf("yellow"), new CornerRadii(10), Insets.EMPTY));
+    }
+
+    private void inizializzaSupermercato(){
+        supermercato = new Supermercato(10);
     }
 
     @FXML
     void initialize(){
+        run = false;
         inizializzaTimeline();
         inizializzaPulsanti();
-        rosso = new Background(new BackgroundFill(Paint.valueOf("red"), new CornerRadii(10), Insets.EMPTY));
-        verde = new Background(new BackgroundFill(Paint.valueOf("lime"), new CornerRadii(10), Insets.EMPTY));
-        timeline.play(); //Il play dovrà essere integrato con la barra dei menù
+        inizializzazioneColori();
+        inizializzaSupermercato();
+        aggiornaGrafica();
     }
 
+    /**
+     * Operazione di start.
+     */
+    @FXML
+    protected void start (){
+        timeline.play();
+        run = true;
+        aggiornaGrafica();
+    }
 
     /**
-     * Operation onButtonClik
-     * Attiva o disattiva la cassa.
-     *
-     */
-    protected void onButtonClik (  ){}
-    /**
-     * Operation start
-     *
+     * Operazione di pause
      */
     @FXML
-    protected void start (  ){}
-    /**
-     * Operation stop
-     *
-     */
-    @FXML
-    protected void stop (  ){}
-    /**
-     * Operation pause
-     *
-     */
-    @FXML
-    protected void pause (  ){}
-    /**
-     * Operation reset
-     *
-     */
-    @FXML
-    protected void reset (  ){}
+    protected void pause (){
+        timeline.pause();
+        run = false;
+        aggiornaGrafica();
+    }
 
-
+    /**
+     * Operazione di reset
+     */
+    @FXML
+    protected void reset (){
+        inizializzaSupermercato();
+        aggiornaGrafica();
+    }
 }
 

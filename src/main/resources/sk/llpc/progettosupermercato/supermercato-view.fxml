@@ -3,8 +3,9 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="816.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.llpc.progettosupermercato.SupermercatoController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.llpc.progettosupermercato.SupermercatoController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -12,7 +13,6 @@
             <items>
               <MenuItem mnemonicParsing="false" onAction="#start" text="Start" />
                   <MenuItem mnemonicParsing="false" onAction="#pause" text="Pause" />
-                  <MenuItem mnemonicParsing="false" onAction="#stop" text="Stop" />
                   <MenuItem mnemonicParsing="false" onAction="#reset" text="Reset" />
             </items>
           </Menu>
@@ -20,48 +20,78 @@
       </MenuBar>
    </top>
    <center>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="816.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="111.0" prefWidth="1023.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="bttCassa0" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick0" text="Button">
+            <Button fx:id="bttCassa0" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick0" prefWidth="66.0" text="00">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
-               </HBox.margin></Button>
-            <Button fx:id="bttCassa1" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick1" text="Button">
+               </HBox.margin>
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="bttCassa1" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick1" prefWidth="66.0" text="00">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
-               </HBox.margin></Button>
-            <Button fx:id="bttCassa2" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick2" text="Button">
+               </HBox.margin>
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="bttCassa2" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick2" prefWidth="66.0" text="00">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
-               </HBox.margin></Button>
-            <Button fx:id="bttCassa3" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick3" text="Button">
+               </HBox.margin>
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="bttCassa3" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick3" prefWidth="66.0" text="00">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
-               </HBox.margin></Button>
-            <Button fx:id="bttCassa4" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick4" text="Button">
+               </HBox.margin>
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="bttCassa4" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick4" prefWidth="66.0" text="00">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
-               </HBox.margin></Button>
-            <Button fx:id="bttCassa5" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick5" text="Button">
+               </HBox.margin>
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="bttCassa5" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick5" prefWidth="66.0" text="00">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
-               </HBox.margin></Button>
-            <Button fx:id="bttCassa6" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick6" text="Button">
+               </HBox.margin>
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="bttCassa6" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick6" prefWidth="66.0" text="00">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
-               </HBox.margin></Button>
-            <Button fx:id="bttCassa7" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick7" text="Button">
+               </HBox.margin>
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="bttCassa7" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick7" prefWidth="66.0" text="00">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
-               </HBox.margin></Button>
-            <Button fx:id="bttCassa8" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick8" text="Button">
+               </HBox.margin>
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="bttCassa8" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick8" prefWidth="66.0" text="00">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
-               </HBox.margin></Button>
-            <Button fx:id="bttCassa9" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick9" text="Button">
+               </HBox.margin>
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="bttCassa9" alignment="CENTER" mnemonicParsing="false" onAction="#onBttClick9" prefWidth="66.0" text="00">
                <HBox.margin>
                   <Insets left="11.0" right="11.0" />
-               </HBox.margin></Button>
+               </HBox.margin>
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
          </children>
       </HBox>
    </center>
