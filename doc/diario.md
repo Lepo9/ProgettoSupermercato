@@ -119,6 +119,7 @@ segnalandolo al gruppo per non scrivere cose uguali).
 - Metodo ricercaCassaMinore() [Supermercato]
 - Metodo aggiorna() [Supermercato]
 - Costruttore Supermercato() [Supermercato]
+- Metodo inizializzazionePulsanti() [SupermercatoController]
 
 ####Loda
 - Classe cassa
@@ -126,6 +127,7 @@ segnalandolo al gruppo per non scrivere cose uguali).
 - Metodo ricercaCassaMinore() [Supermercato]
 - Metodo aggiorna() [Supermercato]
 - Costruttore Supermercato() [Supermercato]
+- Metodo inizializzazionePulsanti() [SupermercatoController]
 
 
 Pasini e Leporati hanno lavorato di più sulla parte del controller

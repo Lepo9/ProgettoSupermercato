@@ -13,7 +13,7 @@ public class Carrello {
     //6 Non smaltisce e si accumula
     //4 smaltisce
     private int nProdotti;
-    final static int PRODOTTI_MAX = 2; //da 1 a N.
+    final static int PRODOTTI_MAX = 3; //da 1 a N.
 
     /**
      * Costruttore vuoto: crea un numero randomico di prodotti all'interno di un Carrello.
