@@ -12,7 +12,7 @@ public class SupermercatoApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(SupermercatoApplication.class.getResource("supermercato-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Casse");
+        stage.setTitle("Supermarket");
         stage.setScene(scene);
         stage.show();
     }

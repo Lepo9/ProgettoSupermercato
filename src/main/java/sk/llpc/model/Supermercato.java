@@ -14,7 +14,6 @@ public class Supermercato {
 
     /**
      * Crea l'ArreyList e costruzione delle casse.
-     *
      * @param nCasse Numero di casse presenti nel Supermercato.
      */
     public Supermercato(int nCasse) {
@@ -40,10 +39,6 @@ public class Supermercato {
             ricercaCassaMinore().aggiungiCarrello(new Carrello());
         }
     }
-
-
-
-
 
     /**
      * Ricerca della Cassa minore.
@@ -73,7 +68,7 @@ public class Supermercato {
 
     /**
      * Si occupa di produrre un array di booleani che definisce
-     * se le casse sono aperte 0 chiuse.
+     * se le casse sono aperte o chiuse.
      * @return Arraylist di boolean true o false.
      */
     public ArrayList<Boolean> getCasseAperte(){
